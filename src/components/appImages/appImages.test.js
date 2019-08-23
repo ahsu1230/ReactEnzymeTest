@@ -1,10 +1,11 @@
 import React from "react";
 import Enzyme, { shallow } from "enzyme";
-import App1 from "./app1.js";
+import App from "./appImages.js";
 
-describe("test1", () => {
+describe("test", () => {
   test("renders", () => {
-    const app = shallow(<App1/>);
+    const app = shallow(<App/>);
     expect(app.exists()).toBe(true);
+    expect(app.find("img").length).toBe(3);
   });
 });

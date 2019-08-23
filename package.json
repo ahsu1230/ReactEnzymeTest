@@ -19,7 +19,9 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.2.1",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "jest-svg-transformer": "^1.0.0",
+    "jest-transform-css": "^2.0.0"
   },
   "scripts": {
     "test": "jest --verbose",
@@ -37,6 +39,13 @@
   },
   "homepage": "https://github.com/ahsu1230/ReactEnzymeTest#readme",
   "jest": {
-    "setupFilesAfterEnv": ["./src/setupTestAdapter.js"]
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      ".+\\.(css|styl)$": "jest-transform-css",
+      "^.+\\.svg$": "jest-svg-transformer"
+    },
+    "setupFilesAfterEnv": [
+      "./src/setupTestAdapter.js"
+    ]
   }
 }
