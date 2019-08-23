@@ -6,6 +6,8 @@ describe("test", () => {
   const app = shallow(<App/>);
 
   test("renders", () => {
-
+    expect(app.exists()).toBe(true);
+    expect(app.find("Link").exists()).toBe(true);
+    expect(app.find("Link").props().to).toBe("/page2");
   });
 });
